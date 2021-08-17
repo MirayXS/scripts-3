@@ -1,0 +1,165 @@
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+-- Settings
+
+bind = "q" -- has to be lowercase
+
+-- Script
+
+mouse.KeyDown:connect(function(key)
+if key == bind then
+local oldpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Head:Destroy()
+--wait(1)
+repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Head")
+wait()
+for i = 1, 5 do
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldpos
+end
+local args = {
+    [1] = {
+        ["BodyParts"] = {
+            ["RightArm"] = 0,
+            ["Torso"] = 0,
+            ["Head"] = 2510276237,
+            ["RightLeg"] = 0,
+            ["Face"] = 86487700,
+            ["LeftArm"] = 0,
+            ["LeftLeg"] = 0
+        },
+        ["Clothes"] = {
+            ["GraphicTShirt"] = 6738034426,
+            ["Shirt"] = 0,
+            ["Pants"] = 4982506348
+        },
+        ["Accessories"] = {
+            ["HatAccessory"] = {
+                [1] = 1055299,
+            },
+            ["BackAccessory"] = {},
+            ["FrontAccessory"] = {},
+            ["FaceAccessory"] = {},
+            ["WaistAccessory"] = {},
+            ["ShouldersAccessory"] = {},
+            ["NeckAccessory"] = {},
+            ["HairAccessory"] = {}
+        },
+        ["Animation"] = {
+            ["FallAnimation"] = 0,
+            ["ClimbAnimation"] = 0,
+            ["IdleAnimation"] = 0,
+            ["WalkAnimation"] = 0,
+            ["SwimAnimation"] = 0,
+            ["JumpAnimation"] = 0,
+            ["RunAnimation"] = 0
+        },
+        ["Scale"] = {
+            ["BodyTypeScale"] = 0,
+            ["DepthScale"] = 1,
+            ["HeadScale"] = 1,
+            ["HeightScale"] = 1,
+            ["ProportionScale"] = 0,
+            ["WidthScale"] = 1
+        },
+        ["Emotes"] = {
+            ["Hello"] = {
+                [1] = 3576686446
+            },
+            ["Tilt"] = {
+                [1] = 3360692915
+            },
+            ["Shrug"] = {
+                [1] = 3576968026
+            },
+            ["Point2"] = {
+                [1] = 3576823880
+            },
+            ["Salute"] = {
+                [1] = 3360689775
+            },
+            ["Stadium"] = {
+                [1] = 3360686498
+            },
+            ["Applaud"] = {
+                [1] = 5915779043
+            }
+        },
+        ["EquippedEmotes"] = {
+            [1] = {
+                ["Name"] = "Tilt",
+                ["Slot"] = 8
+            },
+            [2] = {
+                ["Name"] = "Salute",
+                ["Slot"] = 7
+            },
+            [3] = {
+                ["Name"] = "Applaud",
+                ["Slot"] = 6
+            },
+            [4] = {
+                ["Name"] = "Shrug",
+                ["Slot"] = 4
+            },
+            [5] = {
+                ["Name"] = "Point2",
+                ["Slot"] = 3
+            },
+            [6] = {
+                ["Name"] = "Stadium",
+                ["Slot"] = 2
+            },
+            [7] = {
+                ["Name"] = "Hello",
+                ["Slot"] = 1
+            }
+        },
+        ["BodyColors"] = {
+            ["HeadColor"] = {
+                [1] = 0.63921570777893,
+                [2] = 0.63529413938522,
+                [3] = 0.64705884456635
+            },
+            ["TorsoColor"] = {
+                [1] = 0.63921570777893,
+                [2] = 0.63529413938522,
+                [3] = 0.64705884456635
+            },
+            ["LeftArmColor"] = {
+                [1] = 0.63921570777893,
+                [2] = 0.63529413938522,
+                [3] = 0.64705884456635
+            },
+            ["RightLegColor"] = {
+                [1] = 0.63921570777893,
+                [2] = 0.63529413938522,
+                [3] = 0.64705884456635
+            },
+            ["LeftLegColor"] = {
+                [1] = 0.63921570777893,
+                [2] = 0.63529413938522,
+                [3] = 1.64705884456635
+            },
+            ["RightArmColor"] = {
+                [1] = 0.63921570777893,
+                [2] = 0.63529413938522,
+                [3] = 0.64705884456635
+            }
+        }
+    },
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage").ApplyDescription:InvokeServer(unpack(args))
+
+hat = game.Players.LocalPlayer.Character:WaitForChild'TeapotTurret'
+hammer = hat.GravityHammer
+hammer.Parent = game.Players.LocalPlayer:FindFirstChildOfClass'Backpack'
+--DIRTY HACKS TO PARENT HAT/TOOLS WITH REPLICATION ON FE--
+hat.Parent = nil
+hammer.Parent = game.Players.LocalPlayer.Character
+game:GetService'RunService'.Stepped:wait()
+hammer.Parent = game.Players.LocalPlayer.Character
+end
+end)
