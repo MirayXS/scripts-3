@@ -1,4 +1,5 @@
---Converted with ttyyuu12345's model to script plugin v4
+--PRESS SHIFT + P TO ENABLE/DISABLE!!! ENJOY
+
 function sandbox(var,func)
 local env = getfenv(func)
 local newenv = setmetatable({},{
