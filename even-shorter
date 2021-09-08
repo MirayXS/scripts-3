@@ -1,0 +1,29 @@
+--made by ov3rp0wered#8482
+loadstring(game:HttpGet('https://raw.githubusercontent.com/sombolian/scripts/main/Roblox-Event-FE-Gravity-Hammer'))()
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+-- Settings
+bind = "x" -- key for dropping the tool
+-----------------------------------
+mouse.KeyDown:connect(function(key)
+if key == bind then
+local ToolName = ""
+local Counter = 0
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") then
+Counter = Counter + 1
+ToolName = v.Name
+end
+end
+
+if Counter >= 1 then
+local Tool = game.Players.LocalPlayer.Character[ToolName]
+Tool.Parent = game.Workspace
+warn("Dropped!")
+else
+warn("No tool was found.")
+end
+end
+end)
