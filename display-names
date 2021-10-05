@@ -1,3 +1,9 @@
+
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
+
 local Settings = {
     ApplyToLeaderboard = true,
     IdentifyFriends = true,
