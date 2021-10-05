@@ -1,8 +1,6 @@
-if not game:IsLoaded() then
-    game.Loaded:wait()
-end
-wait(5)
 
+repeat wait() until game:IsLoaded()
+wait(1)
 
 local Settings = {
     ApplyToLeaderboard = true,
