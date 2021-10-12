@@ -1,0 +1,31 @@
+
+repeat wait() until game:IsLoaded()
+wait(1)
+local Players = game:GetService('Players')
+local Animate = Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = 'rbxassetid://3489171152'
+Animate.idle.Animation2.AnimationId = 'rbxassetid://3489171152'
+Animate.run.RunAnim.AnimationId = 'rbxassetid://3489173414'
+Animate.walk.WalkAnim.AnimationId = 'rbxassetid://1014421541'
+Animate.jump.JumpAnim.AnimationId = 'rbxassetid://1014394726'
+Animate.climb.ClimbAnim.AnimationId = 'rbxassetid://1014380606'
+Animate.fall.FallAnim.AnimationId = 'rbxassetid://1014384571'
+Animate.swim.Swim.AnimationId = 'rbxassetid://1014406523'
+Animate.swimidle.SwimIdle.AnimationId = 'rbxassetid://1014411816'
+game.Players.LocalPlayer.CharacterAdded:connect(function(char)
+wait(1)
+local Players = game:GetService('Players')
+local Animate = Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = 'rbxassetid://3489171152'
+Animate.idle.Animation2.AnimationId = 'rbxassetid://3489171152'
+Animate.run.RunAnim.AnimationId = 'rbxassetid://3489173414'
+Animate.walk.WalkAnim.AnimationId = 'rbxassetid://1014421541'
+Animate.jump.JumpAnim.AnimationId = 'rbxassetid://1014394726'
+Animate.climb.ClimbAnim.AnimationId = 'rbxassetid://1014380606'
+Animate.fall.FallAnim.AnimationId = 'rbxassetid://1014384571'
+Animate.swim.Swim.AnimationId = 'rbxassetid://1014406523'
+Animate.swimidle.SwimIdle.AnimationId = 'rbxassetid://1014411816'
+char.ChildAdded:connect(function(ch)
+print(ch.Name)
+end)
+end)
