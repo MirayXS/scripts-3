@@ -1,0 +1,21 @@
+for i, v in pairs(game:GetService'Players':GetChildren()) do
+if v and v.Character then
+local character = v.Character.name
+
+   getgenv().Toggled = true
+   
+   local Player = character
+   
+   local Players = game:GetService('Players')
+   local RunService = game:GetService('RunService')
+   
+   RunService.Heartbeat:Connect(function()
+       if Toggled then
+           pcall(function()
+               Players[Player].Character.LowerTorso:FindFirstChild('BOOMBOXSOUND').Playing = false
+               Players[Player].Character.LowerTorso:FindFirstChild('BOOMBOXSOUND').TimePosition = 0
+           end)
+       end
+   end)
+end
+end
