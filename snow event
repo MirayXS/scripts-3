@@ -1,0 +1,21 @@
+
+
+
+local args = {
+	    [1] = {
+        ["WidthScale"] = size,
+
+        ["DepthScale"] = size,
+
+        ["HeadScale"] = size,
+        ["HeightScale"] = size,
+
+    },
+    [2] = {
+        [1] = "ML2_Collar_RTHRO",
+        [2] = "MensLook2_Shirt",
+        [3] = "MensLook1_Pants"
+    }
+}
+
+game:GetService("ReplicatedStorage").RuntimeEvents.ApplyDescription:FireServer(unpack(args))
