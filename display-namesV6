@@ -1,0 +1,15 @@
+local AntiDisplayName = loadstring(game:HttpGet('https://raw.githubusercontent.com/sombolian/scripts/main/anti%20display%20source%20v6'))(function()
+    getgenv().Preferences = {}
+end)
+
+Preferences = {
+    RetroNaming = false,
+    ShowOriginalName = true,
+    ApplyToLeaderboard = true,
+    IdentifyFriends = {Toggle = true, Identifier = '[Friend]'},
+    IdentifyBlocked = {Toggle = true, Identifier = '[Blocked]'},
+    IdentifyPremium = {Toggle = true, Identifier = '[Premium]'},
+    IdentifyDeveloper = {Toggle = true, Identifier = '[Game Dev]'},
+    SpoofLocalPlayer = {Toggle = false, UseRandomName = true, NewName = 'Random Name Lol'},
+    Orientation = 'Horizontal'
+}
