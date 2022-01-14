@@ -1,0 +1,57 @@
+local DevConsole = game:GetService("CoreGui"):WaitForChild("DevConsoleMaster")
+local Window = DevConsole.DevConsoleWindow
+local UI = Window.DevConsoleUI
+local MainView = UI:WaitForChild("MainView")
+local ClientLog = MainView:WaitForChild("ClientLog")
+local r = game:GetService("RunService")
+local GetHighest = function(...)
+    local HighestValue
+    for _, Value in next, ... do
+        if not HighestValue or Value > HighestValue then
+            HighestValue = Value
+        end
+    end
+    return HighestValue
+end
+function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+
+local rain = {}
+
+getgenv().CPrint = function(...)
+    local args = {...}
+    local col;
+    local rainbow;
+    if typeof(args[2]) ~= "Color3" and args[2]:lower() == "rainbow" then
+        rainbow = true;
+    else
+        if args[2] ~= nil and typeof(args[2]) == "Color3" then
+            col = args[2];
+        else
+            col = Color3.fromRGB(254,44,84)
+        end;
+    end;
+    local CandidParts = {}
+    for _, Element in next, ClientLog:GetChildren() do
+        local Name = Element.Name
+        if Name:match("%d+") then
+            table.insert(CandidParts, tonumber(Element.Name))
+        end
+    end
+    local Expecting = GetHighest(CandidParts)
+    Expecting = Expecting and (Expecting + 1) or (2)
+    print(args[1])
+    local ExpectedPart = ClientLog:WaitForChild(Expecting)
+    local MessagePart = ExpectedPart:FindFirstChild("msg")
+    if MessagePart and rainbow then
+        rain[MessagePart] = 0;
+        r.RenderStepped:Connect(function()
+            MessagePart.TextColor3 = Color3.fromHSV(zigzag(rain[MessagePart]),1,1);
+            rain[MessagePart] = rain[MessagePart] + 0.005
+            wait();
+        end);
+    end;
+    if MessagePart and not rainbow then
+        MessagePart.TextColor3 = col
+    end
+end
+CPrint("RAPED THEIR ANTI CHEAT LOOOLOLOL","Rainbow")
