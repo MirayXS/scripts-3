@@ -1,0 +1,433 @@
+--[[You need a tool equipped for this to work!
+
+For positioning, use the arrow keys to position your tool
+Directions: Forward, Backward, Left, Right | Up, Down (Other)
+
+For removing, click on the buttons based on what you want to remove
+
+]]
+
+-- Objects
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Position = Instance.new("TextButton")
+local Remove = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local PositionFrame = Instance.new("Frame")
+local Right = Instance.new("TextButton")
+local Forward = Instance.new("TextButton")
+local Left = Instance.new("TextButton")
+local Backward = Instance.new("TextButton")
+local Up = Instance.new("TextButton")
+local Down = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local RemoveFrame = Instance.new("Frame")
+local Close_2 = Instance.new("TextButton")
+local RemoveMesh = Instance.new("TextButton")
+local RemoveScripts = Instance.new("TextButton")
+local RemoveSounds = Instance.new("TextButton")
+local RemoveHandle = Instance.new("TextButton")
+local RemoveTool = Instance.new("TextButton")
+
+-- Properties
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ResetOnSpawn = false
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.new(0.498039, 0.498039, 0.498039)
+Frame.BorderColor3 = Color3.new(0, 0, 0)
+Frame.Position = UDim2.new(0.811843395, 0, 0.466876984, 0)
+Frame.Size = UDim2.new(0, 150, 0, 150)
+
+Position.Name = "Position"
+Position.Parent = Frame
+Position.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Position.BorderColor3 = Color3.new(0, 0, 0)
+Position.Position = UDim2.new(0, 0, 0.330000013, 0)
+Position.Size = UDim2.new(0, 150, 0, 37)
+Position.Font = Enum.Font.GothamSemibold
+Position.Text = "< Position"
+Position.TextColor3 = Color3.new(1, 1, 1)
+Position.TextScaled = true
+Position.TextSize = 14
+Position.TextWrapped = true
+
+Remove.Name = "Remove"
+Remove.Parent = Frame
+Remove.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Remove.BorderColor3 = Color3.new(0, 0, 0)
+Remove.Position = UDim2.new(0, 0, 0.575000048, 0)
+Remove.Size = UDim2.new(0, 150, 0, 37)
+Remove.Font = Enum.Font.GothamSemibold
+Remove.Text = "< Remove"
+Remove.TextColor3 = Color3.new(1, 1, 1)
+Remove.TextScaled = true
+Remove.TextSize = 14
+Remove.TextWrapped = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.new(0.498039, 0.498039, 0.498039)
+TextLabel.BackgroundTransparency = 1
+TextLabel.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel.Position = UDim2.new(0.00666666683, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 149, 0, 50)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "Tool Editor"
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
+
+PositionFrame.Name = "PositionFrame"
+PositionFrame.Parent = Frame
+PositionFrame.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+PositionFrame.Position = UDim2.new(math.huge, 0, -0.0350000262, 0)
+PositionFrame.Size = UDim2.new(0, 200, 0, 150)
+PositionFrame.Transparency = 1
+
+Right.Name = "Right"
+Right.Parent = PositionFrame
+Right.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Right.BorderColor3 = Color3.new(0, 0, 0)
+Right.Position = UDim2.new(0.814999998, 0, 0.379999995, 0)
+Right.Rotation = 180
+Right.Size = UDim2.new(0, 37, 0, 37)
+Right.Font = Enum.Font.GothamSemibold
+Right.Text = "<"
+Right.TextColor3 = Color3.new(1, 1, 1)
+Right.TextScaled = true
+Right.TextSize = 14
+Right.TextWrapped = true
+Right.Transparency = 1
+
+Forward.Name = "Forward"
+Forward.Parent = PositionFrame
+Forward.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Forward.BorderColor3 = Color3.new(0, 0, 0)
+Forward.Position = UDim2.new(0.625, 0, 0.119999997, 0)
+Forward.Rotation = 90
+Forward.Size = UDim2.new(0, 37, 0, 37)
+Forward.Font = Enum.Font.GothamSemibold
+Forward.Text = "<"
+Forward.TextColor3 = Color3.new(1, 1, 1)
+Forward.TextScaled = true
+Forward.TextSize = 14
+Forward.TextWrapped = true
+Forward.Transparency = 1
+
+Left.Name = "Left"
+Left.Parent = PositionFrame
+Left.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Left.BorderColor3 = Color3.new(0, 0, 0)
+Left.Position = UDim2.new(0.435000002, 0, 0.377000004, 0)
+Left.Size = UDim2.new(0, 37, 0, 37)
+Left.Font = Enum.Font.GothamSemibold
+Left.Text = "<"
+Left.TextColor3 = Color3.new(1, 1, 1)
+Left.TextScaled = true
+Left.TextSize = 14
+Left.TextWrapped = true
+Left.Transparency = 1
+
+Backward.Name = "Backward"
+Backward.Parent = PositionFrame
+Backward.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Backward.BorderColor3 = Color3.new(0, 0, 0)
+Backward.Position = UDim2.new(0.623000026, 0, 0.632000029, 0)
+Backward.Rotation = 270
+Backward.Size = UDim2.new(0, 37, 0, 37)
+Backward.Font = Enum.Font.GothamSemibold
+Backward.Text = "<"
+Backward.TextColor3 = Color3.new(1, 1, 1)
+Backward.TextScaled = true
+Backward.TextSize = 14
+Backward.TextWrapped = true
+Backward.Transparency = 1
+
+Up.Name = "Up"
+Up.Parent = PositionFrame
+Up.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Up.BorderColor3 = Color3.new(0, 0, 0)
+Up.Position = UDim2.new(0.0329998769, 0, 0.0426666215, 0)
+Up.Rotation = 180
+Up.Size = UDim2.new(0, 37, 0, 23)
+Up.Font = Enum.Font.GothamSemibold
+Up.Text = "v"
+Up.TextColor3 = Color3.new(1, 1, 1)
+Up.TextScaled = true
+Up.TextSize = 14
+Up.TextWrapped = true
+Up.Transparency = 1
+
+Down.Name = "Down"
+Down.Parent = PositionFrame
+Down.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Down.BorderColor3 = Color3.new(0, 0, 0)
+Down.Position = UDim2.new(0.247999996, 0, 0.0430000015, 0)
+Down.Size = UDim2.new(0, 37, 0, 23)
+Down.Font = Enum.Font.GothamSemibold
+Down.Text = "v"
+Down.TextColor3 = Color3.new(1, 1, 1)
+Down.TextScaled = true
+Down.TextSize = 14
+Down.TextWrapped = true
+Down.Transparency = 1
+
+Close.Name = "Close"
+Close.Parent = PositionFrame
+Close.BackgroundColor3 = Color3.new(0.52549, 0, 0)
+Close.BorderColor3 = Color3.new(0, 0, 0)
+Close.Position = UDim2.new(0.0329998769, 0, 0.711666644, 0)
+Close.Size = UDim2.new(0, 37, 0, 37)
+Close.Font = Enum.Font.GothamSemibold
+Close.Text = "X"
+Close.TextColor3 = Color3.new(1, 1, 1)
+Close.TextScaled = true
+Close.TextSize = 14
+Close.TextWrapped = true
+Close.Transparency = 1
+
+RemoveFrame.Name = "RemoveFrame"
+RemoveFrame.Parent = Frame
+RemoveFrame.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+RemoveFrame.Position = UDim2.new(math.huge, 0, -0.0350000262, 0)
+RemoveFrame.Size = UDim2.new(0, 200, 0, 150)
+RemoveFrame.Transparency = 1
+
+Close_2.Name = "Close"
+Close_2.Parent = RemoveFrame
+Close_2.BackgroundColor3 = Color3.new(0.52549, 0, 0)
+Close_2.BorderColor3 = Color3.new(0, 0, 0)
+Close_2.Position = UDim2.new(0.0329998769, 0, 0.711666644, 0)
+Close_2.Size = UDim2.new(0, 37, 0, 37)
+Close_2.Font = Enum.Font.GothamSemibold
+Close_2.Text = "X"
+Close_2.TextColor3 = Color3.new(1, 1, 1)
+Close_2.TextScaled = true
+Close_2.TextSize = 14
+Close_2.TextWrapped = true
+Close_2.Transparency = 1
+
+RemoveMesh.Name = "RemoveMesh"
+RemoveMesh.Parent = RemoveFrame
+RemoveMesh.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+RemoveMesh.BorderColor3 = Color3.new(0, 0, 0)
+RemoveMesh.Position = UDim2.new(0.0329998732, 0, 0.0516666658, 0)
+RemoveMesh.Size = UDim2.new(0, 80, 0, 37)
+RemoveMesh.Font = Enum.Font.GothamSemibold
+RemoveMesh.Text = "Remove Mesh"
+RemoveMesh.TextColor3 = Color3.new(1, 1, 1)
+RemoveMesh.TextScaled = true
+RemoveMesh.TextSize = 14
+RemoveMesh.TextWrapped = true
+RemoveMesh.Transparency = 1
+
+RemoveScripts.Name = "RemoveScripts"
+RemoveScripts.Parent = RemoveFrame
+RemoveScripts.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+RemoveScripts.BorderColor3 = Color3.new(0, 0, 0)
+RemoveScripts.Position = UDim2.new(0.567999899, 0, 0.0516666658, 0)
+RemoveScripts.Size = UDim2.new(0, 80, 0, 37)
+RemoveScripts.Font = Enum.Font.GothamSemibold
+RemoveScripts.Text = "Remove Scripts"
+RemoveScripts.TextColor3 = Color3.new(1, 1, 1)
+RemoveScripts.TextScaled = true
+RemoveScripts.TextSize = 14
+RemoveScripts.TextWrapped = true
+RemoveScripts.Transparency = 1
+
+RemoveSounds.Name = "RemoveSounds"
+RemoveSounds.Parent = RemoveFrame
+RemoveSounds.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+RemoveSounds.BorderColor3 = Color3.new(0, 0, 0)
+RemoveSounds.Position = UDim2.new(0.0329998732, 0, 0.358333349, 0)
+RemoveSounds.Size = UDim2.new(0, 80, 0, 37)
+RemoveSounds.Font = Enum.Font.GothamSemibold
+RemoveSounds.Text = "Remove Sounds"
+RemoveSounds.TextColor3 = Color3.new(1, 1, 1)
+RemoveSounds.TextScaled = true
+RemoveSounds.TextSize = 14
+RemoveSounds.TextWrapped = true
+RemoveSounds.Transparency = 1
+
+RemoveHandle.Name = "RemoveHandle"
+RemoveHandle.Parent = RemoveFrame
+RemoveHandle.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+RemoveHandle.BorderColor3 = Color3.new(0, 0, 0)
+RemoveHandle.Position = UDim2.new(0.567999899, 0, 0.358333349, 0)
+RemoveHandle.Size = UDim2.new(0, 80, 0, 37)
+RemoveHandle.Font = Enum.Font.GothamSemibold
+RemoveHandle.Text = "Remove Handle"
+RemoveHandle.TextColor3 = Color3.new(1, 1, 1)
+RemoveHandle.TextScaled = true
+RemoveHandle.TextSize = 14
+RemoveHandle.TextWrapped = true
+RemoveHandle.Transparency = 1
+
+RemoveTool.Name = "RemoveTool"
+RemoveTool.Parent = RemoveFrame
+RemoveTool.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+RemoveTool.BorderColor3 = Color3.new(0, 0, 0)
+RemoveTool.Position = UDim2.new(0.567999899, 0, 0.671666682, 0)
+RemoveTool.Size = UDim2.new(0, 80, 0, 37)
+RemoveTool.Font = Enum.Font.GothamSemibold
+RemoveTool.Text = "Remove Tool"
+RemoveTool.TextColor3 = Color3.new(1, 1, 1)
+RemoveTool.TextScaled = true
+RemoveTool.TextSize = 14
+RemoveTool.TextWrapped = true
+RemoveTool.Transparency = 1
+
+local Click = Instance.new("Sound")
+Click.Name = "ClickNoise"
+Click.SoundId = "rbxassetid://226892749"
+Click.Volume = 1
+Click.Parent = Frame
+
+Position.MouseButton1Click:Connect(function()
+Frame.ClickNoise:Play()
+PositionFrame.Position = UDim2.new(-1.52666676, 0, -0.0350000262, 0)
+Left.Transparency = 0
+Right.Transparency = 0
+Forward.Transparency = 0
+Backward.Transparency = 0
+Up.Transparency = 0
+Down.Transparency = 0
+Close.Transparency = 0
+PositionFrame.BackgroundTransparency = 0
+end)
+
+Remove.MouseButton1Click:Connect(function()
+Frame.ClickNoise:Play()
+RemoveFrame.Position = UDim2.new(-1.52666676, 0, -0.0350000262, 0)
+RemoveMesh.Transparency = 0
+RemoveScripts.Transparency = 0
+RemoveSounds.Transparency = 0
+RemoveHandle.Transparency = 0
+RemoveTool.Transparency = 0
+Close_2.Transparency = 0
+RemoveFrame.BackgroundTransparency = 0
+end)
+
+Left.MouseButton1Click:Connect(function()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool.Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip + Vector3.new(0,1,0)
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Parent = game.Players.LocalPlayer.Character
+end)
+
+Right.MouseButton1Click:Connect(function()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool.Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip - Vector3.new(0,1,0)
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Parent = game.Players.LocalPlayer.Character
+end)
+
+Forward.MouseButton1Click:Connect(function()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool.Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip + Vector3.new(1,0,0)
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Parent = game.Players.LocalPlayer.Character
+end)
+
+Backward.MouseButton1Click:Connect(function()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool.Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip - Vector3.new(1,0,0)
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Parent = game.Players.LocalPlayer.Character
+end)
+
+Up.MouseButton1Click:Connect(function()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool.Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip - Vector3.new(0,0,1)
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Parent = game.Players.LocalPlayer.Character
+end)
+
+Down.MouseButton1Click:Connect(function()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool.Grip = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Grip + Vector3.new(0,0,1)
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Parent = game.Players.LocalPlayer.Character
+end)
+
+Close.MouseButton1Click:Connect(function()
+Frame.ClickNoise:Play()
+PositionFrame.Position = UDim2.new(math.huge, 0, -0.0350000262, 0)
+Left.Transparency = 1
+Right.Transparency = 1
+Forward.Transparency = 1
+Backward.Transparency = 1
+Up.Transparency = 1
+Down.Transparency = 1
+Close.Transparency = 1
+PositionFrame.BackgroundTransparency = 1
+end)
+
+RemoveMesh.MouseButton1Click:Connect(function()
+Frame.ClickNoise:Play()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool.Handle.Mesh:Destroy()
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Parent = game.Players.LocalPlayer.Character
+end)
+
+RemoveScripts.MouseButton1Click:Connect(function()
+Frame.ClickNoise:Play()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+for i,v in pairs(tool:GetDescendants()) do
+if v:IsA("Script") then
+v:Destroy()
+end
+end
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Parent = game.Players.LocalPlayer.Character
+end)
+
+RemoveSounds.MouseButton1Click:Connect(function()
+Frame.ClickNoise:Play()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+for i,v in pairs(tool:GetDescendants()) do
+if v:IsA("Sound") then
+v:Destroy()
+end
+end
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Parent = game.Players.LocalPlayer.Character
+end)
+
+RemoveHandle.MouseButton1Click:Connect(function()
+Frame.ClickNoise:Play()
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool.Handle:Destroy()
+end)
+
+RemoveTool.MouseButton1Click:Connect(function()
+Frame.ClickNoise:Play()
+Frame.Position = UDim2.new(math.huge, 0, 0.466876984, 0)
+local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool:Destroy()
+end)
+
+Close_2.MouseButton1Click:Connect(function()
+RemoveFrame.Position = UDim2.new(math.huge, 0, -0.0350000262, 0)
+Frame.ClickNoise:Play()
+RemoveMesh.Transparency = 1
+RemoveScripts.Transparency = 1
+RemoveSounds.Transparency = 1
+RemoveHandle.Transparency = 1
+RemoveTool.Transparency = 1
+Close_2.Transparency = 1
+RemoveFrame.BackgroundTransparency = 1
+end)
+
+while game:GetService("RunService").Stepped:wait() do
+if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+Frame.Position = UDim2.new(0.811843395, 0, 0.466876984, 0)
+elseif game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool") then
+Frame.Position = UDim2.new(math.huge, 0, 0.466876984, 0)
+end
+end
