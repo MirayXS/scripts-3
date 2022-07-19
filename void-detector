@@ -1,0 +1,162 @@
+repeat wait() until ((((game or {}).Players or {}).LocalPlayer or {}).Character or {}).HumanoidRootPart
+
+repeat wait() until game:IsLoaded()
+
+wait(6)
+
+
+local virtualUser = game:GetService('VirtualUser')
+local SettingsShield = game:GetService("CoreGui").RobloxGui.SettingsShield.SettingsShield
+SettingsShield.Visible = false
+
+virtualUser:CaptureController()
+
+virtualUser:SetKeyDown('0x1B')
+
+virtualUser:SetKeyUp('0x1B')
+wait()
+virtualUser:SetKeyDown('0x1B')
+
+virtualUser:SetKeyUp('0x1B')
+SettingsShield.Visible = true
+
+--SettingsShield.Visible = true
+
+
+--SettingsShield.Visible = true
+
+
+
+
+
+
+
+local PlayersTab = game:GetService("CoreGui").RobloxGui.SettingsShield.SettingsShield.MenuContainer.PageViewClipper.PageView.PageViewInnerFrame.Players
+
+local VoiceClone = game:GetService("CoreGui").BubbleChat["BubbleChat_645961885"].VoiceBubble:Clone()
+
+
+local BubbleChat = game:GetService("CoreGui").BubbleChat
+
+local SettingsShield = game:GetService("CoreGui").RobloxGui.SettingsShield.SettingsShield
+
+
+
+
+
+local VoiceBubble = Instance.new("Frame")
+local Scale = Instance.new("UIScale")
+local RoundedFrame = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local Contents = Instance.new("Frame")
+local Insert = Instance.new("ImageButton")
+local Padding = Instance.new("UIPadding")
+local Carat = Instance.new("ImageLabel")
+
+--Properties:
+
+
+
+
+
+
+
+VoiceBubble.Name = "VoiceBubble1"
+VoiceBubble.AnchorPoint = Vector2.new(0.5, 1)
+VoiceBubble.BackgroundTransparency = 1.000
+VoiceBubble.Position = UDim2.new(0.5, 0, 1, 92)
+VoiceBubble.Size = UDim2.new(0, 100, 0, 100)
+
+Scale.Name = "Scale"
+Scale.Parent = VoiceBubble
+
+RoundedFrame.Name = "RoundedFrame"
+RoundedFrame.Parent = VoiceBubble
+RoundedFrame.AnchorPoint = Vector2.new(0.5, 0)
+RoundedFrame.BackgroundColor3 = Color3.fromRGB(250, 250, 250)
+RoundedFrame.BackgroundTransparency = 1
+RoundedFrame.BorderSizePixel = 0
+RoundedFrame.ClipsDescendants = true
+RoundedFrame.Position = UDim2.new(0.5, 0, 0, 0)
+RoundedFrame.Size = UDim2.new(0, 44, 0, 44)
+RoundedFrame.ImageTransparency = 1
+
+UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.Parent = RoundedFrame
+
+Contents.Name = "Contents"
+Contents.Parent = RoundedFrame
+Contents.BackgroundTransparency = 1.000
+Contents.Size = UDim2.new(1, 0, 1, 0)
+
+Insert.Name = "Insert"
+Insert.Parent = Contents
+Insert.BackgroundTransparency = 1.000
+Insert.BorderSizePixel = 0
+Insert.Size = UDim2.new(0, 28, 0, 28)
+Insert.Image = "rbxassetid://26182897"
+Insert.ImageTransparency = 0.3
+
+Padding.Name = "Padding"
+Padding.Parent = Contents
+Padding.PaddingBottom = UDim.new(0, 7)
+Padding.PaddingLeft = UDim.new(0, 7)
+Padding.PaddingRight = UDim.new(0, 7)
+Padding.PaddingTop = UDim.new(0, 7)
+
+Carat.Name = "Carat"
+Carat.Parent = VoiceBubble
+Carat.AnchorPoint = Vector2.new(0.5, 0)
+Carat.BackgroundTransparency = 1.000
+Carat.Position = UDim2.new(0.5, 0, 1, -1)
+Carat.Size = UDim2.new(0, 12, 0, 8)
+Carat.Image = "rbxasset://textures/ui/InGameChat/Caret.png"
+Carat.ImageColor3 = Color3.fromRGB(250, 250, 250)
+Carat.ImageTransparency = 1
+
+
+
+
+local VoiceClone = VoiceBubble:Clone()
+
+
+
+
+while true do
+    wait(0.5)
+for a, b in pairs(game.Players:GetPlayers()) do
+for c, d in pairs(PlayersTab:GetChildren()) do
+    if d:IsA("ImageLabel") then
+        for e, f in pairs(d:GetChildren()) do
+            if f:IsA("Frame") and f.Name == "RightSideButtons" then
+                for g, h in pairs(f:GetChildren()) do
+                    if h:IsA("ImageButton") and h.Name == "MuteStatusButton" then
+                        for i, j in pairs (h.Parent.Parent:GetChildren()) do
+                            if j:IsA("TextLabel") and j.Name == "NameLabel" then
+                            if j.Text == "@" .. b.Name then
+                                print(b.Name)
+                                for k, l in pairs(BubbleChat:GetChildren()) do
+                                   print(l)
+                                   VoiceBubble:Clone().Parent = l
+                                   if l:FindFirstChild("VoiceBubble1") then
+                                      for m, n in pairs(l:GetChildren()) do
+                                          if n.Name == "VoiceBubble1" then
+                                              n:Destroy()
+                                     if not l:FindFirstChild("VoiceBubble1") then
+                                         VoiceBubble:Clone().Parent = l
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
