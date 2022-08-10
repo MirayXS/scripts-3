@@ -1,7 +1,11 @@
 --racist script by unknown edited by 98#9841
 
+--info:
+--country code has to be a two letter code, if you do not know it search it up for example "canada two letter country code" the answer is "CA"
+
+
 --configuration
-local TwoLetterCountryCode = "COUNTRY YOU HATE HERE MUST BE A 2 LETTER COUNTRY CODE SEARCH IT UP IF U DONT KNOW RETARD"
+local TwoLetterCountryCode = "COUNTRY CODE HERE"
 local kickmessage = "TEXT HERE"
 
 --do not touch
