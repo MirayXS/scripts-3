@@ -1,7 +1,7 @@
 --racist script by unknown edited by 98#9841
 
 --configuration
-local countrycode = "COUNTRY YOU HATE HERE MUST BE COUNTRY CODE SEARCH IT UP IF U DONT KNOW RETARD"
+local TwoLetterCountryCode = "COUNTRY YOU HATE HERE MUST BE A 2 LETTER COUNTRY CODE SEARCH IT UP IF U DONT KNOW RETARD"
 local kickmessage = "TEXT HERE"
 
 --do not touch
@@ -10,7 +10,7 @@ game.Players.PlayerAdded:Connect(function(Player)
     local Result, Code = pcall(function()
         return anti:GetCountryRegionForPlayerAsync(Player)
     end)
-    if Result and Code == countrycode then
+    if Result and Code == TwoLetterCountryCode then
         Player:Kick(kickmessage)
     end
 end)
