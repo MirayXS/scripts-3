@@ -1,0 +1,16 @@
+--racist script by unknown edited by 98#9841
+
+--configuration
+local testing = "TEXT HERE"
+local kickmessage = "TEXT HERE"
+
+--do not touch
+local anti = game:GetService("LocalizationService")
+game.Players.PlayerAdded:Connect(function(Player)
+    local Result, Code = pcall(function()
+        return anti:GetCountryRegionForPlayerAsync(Player)
+    end)
+    if Result and Code == testing then
+        Player:Kick(kickmessage)
+    end
+end)
