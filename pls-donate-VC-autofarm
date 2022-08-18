@@ -135,7 +135,7 @@ function update()
         text = tostring(math.ceil(tonumber(Raised.Value + 1) / 100) * 100)
         text = string.format("%.1fk", text / 10 ^ 3)
         --Booth text when 1000+ robux raised
-        boothText = tostring('<font color="'.. getgenv().settings.hexBox.. '">HELP ME REACH MY GOAL: ' .. text .. "</font>")
+        boothText = tostring('<stroke color="rgb(200,200,200)" thickness="4"><font color="'.. getgenv().settings.hexBox.. '">TALK TO AI CHATBOT 🤖 goal: ' .. text .. "</font></stroke>")
     else
         --Booth text when under 1000 robux raised
         text = tostring(Raised.Value + getgenv().settings.goalBox)
