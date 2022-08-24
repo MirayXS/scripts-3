@@ -298,8 +298,8 @@ local customBoothText = boothTab:AddConsole({
 })
 customBoothText:Set(getgenv().settings.customBoothText)
 boothTab:AddButton("Save", function()
-    if #customBoothText:Get() > 250 then
-        customBoothText:Set("221 Character Limit")
+    if #customBoothText:Get() > 400 then
+        customBoothText:Set("400 Character Limit")
     end
     if settingsLock then
         return
