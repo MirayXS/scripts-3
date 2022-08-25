@@ -7,6 +7,7 @@ until game:IsLoaded()
 if game.PlaceId ~= 8943844393 then
     return
 end
+print("xd")
 
 --Anti-AFK
 local Players = game:GetService("Players")
@@ -610,3 +611,4 @@ while wait(1) do
         end
     end
 end
+
