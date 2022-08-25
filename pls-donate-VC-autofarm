@@ -142,7 +142,7 @@ local function update()
         if tonumber(getgenv().settings.goalBox) < 10 then
             goal = string.format("%.2fk", (current + 10) / 10 ^ 3)
         else
-            goal = string.format("%.2fk", (goal) / 10 ^ 3)
+            goal = string.format("%.1fk", (goal) / 10 ^ 3)
         end
     end
     if current > 999 then
