@@ -146,7 +146,7 @@ local function update()
         end
     end
     if current > 999 then
-        current = string.format("%.0fk", current / 10 ^ 3)
+        current = string.format("%.1fk", current / 10 ^ 3)
     end
         text = string.gsub(getgenv().settings.customBoothText, "$C", current)
         text = string.gsub (text, "$G", goal)
